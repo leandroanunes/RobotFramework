@@ -1,6 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 
+
 *** Variables ***
 ${url}            https://www.amazon.com
 ${browser}        chrome

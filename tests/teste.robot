@@ -1,5 +1,12 @@
 *** settings ***
-Resource    ../src/resource.robot
+Resource              ../src/resource.robot
+
+Documentation         esta suite serve para testar o site da amazon.com.br
+Test Setup            abrir browser
+Test Teardown         fechar browser
+    
+Suite Setup           abrir browser
+Suite Teardown        fechar browser
 
 *** test cases ***
 abrir janela do navegador no site da amazon.com.br
