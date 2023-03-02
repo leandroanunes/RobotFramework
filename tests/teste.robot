@@ -13,7 +13,17 @@ abrir janela do navegador no site da amazon.com.br
     
 
 
-realizar uma pesquisa no site da amazon.com.br
+realizar a busca de um produto no site amazon.com.br
+    [Documentation]        ira realizar a busca de um "xbox one" 
+    [Tags]                 busca 
+    abrir browser no site amazon.com.br
+    clickar na busca
+    pesquisa por "xbox one" no campo de pesquisa
+    clica no botao de pesquisa
+    verifica se esta na pagina certa 
+
+
+
 
 
 fechar janela do navegador
