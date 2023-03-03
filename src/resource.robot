@@ -1,10 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-
-*** Variables ***
-
-
 *** Keywords ***
 abrir browser 
     Open Browser                    browser=chrome     
@@ -18,7 +14,9 @@ Acessar home do site ${url}
 
 Entrar no ${menu}
     Wait Until Element Is Visible    ${menu}
+
     Click Element                    ${menu}
+    Sleep    2s
 
 Verificar se o titulo da pagina ${tituloPagina}
     Wait Until Page Contains         ${tituloPagina}
