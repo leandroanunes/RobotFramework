@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.0 on darwin)" generated="20230302 17:41:17.371" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.0 on darwin)" generated="20230303 12:01:32.979" rpa="false" schemaversion="3">
 <suite id="s1" name="Tests" source="/Users/AMN/Documents/leandro/robot/tests">
 <suite id="s1-s1" name="Teste" source="/Users/AMN/Documents/leandro/robot/tests/teste.robot">
 <test id="s1-s1-t1" name="Caso de teste 01 - Acessar menu eletronicos" line="12">
@@ -7,58 +7,92 @@
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230302 17:41:17.625" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230302 17:41:17.624" endtime="20230302 17:41:22.261"/>
+<msg timestamp="20230303 12:01:37.878" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg timestamp="20230303 12:03:01.313" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230303 12:03:01.314" level="FAIL">WebDriverException: Message: chrome not reachable
+Stacktrace:
+0   chromedriver                        0x0000000104e69138 chromedriver + 4923704
+1   chromedriver                        0x0000000104de19d3 chromedriver + 4368851
+2   chromedriver                        0x0000000104a2a5fd chromedriver + 472573
+3   chromedriver                        0x0000000104a17bf4 chromedriver + 396276
+4   chromedriver                        0x0000000104a5b71c chromedriver + 673564
+5   chromedriver                        0x0000000104a56c9c chromedriver + 654492
+6   chromedriver                        0x0000000104a53041 chromedriver + 639041
+7   chromedriver                        0x0000000104aa18a5 chromedriver + 960677
+8   chromedriver                        0x0000000104a97d23 chromedriver + 920867
+9   chromedriver                        0x0000000104a5ea4b chromedriver + 686667
+10  chromedriver                        0x0000000104a60044 chromedriver + 692292
+11  chromedriver                        0x0000000104e348fe chromedriver + 4708606
+12  chromedriver                        0x0000000104e39e22 chromedriver + 4730402
+13  chromedriver                        0x0000000104e426bf chromedriver + 4765375
+14  chromedriver                        0x0000000104e3ae80 chromedriver + 4734592
+15  chromedriver                        0x0000000104e0b975 chromedriver + 4540789
+16  chromedriver                        0x0000000104e5ce78 chromedriver + 4873848
+17  chromedriver                        0x0000000104e5cff5 chromedriver + 4874229
+18  chromedriver                        0x0000000104e716de chromedriver + 4957918
+19  libsystem_pthread.dylib             0x00007fff729e4109 _pthread_start + 148
+20  libsystem_pthread.dylib             0x00007fff729dfb8b thread_start + 15
+</msg>
+<status status="FAIL" starttime="20230303 12:01:37.878" endtime="20230303 12:03:01.565"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230302 17:41:22.261" endtime="20230302 17:41:22.619"/>
+<status status="NOT RUN" starttime="20230303 12:03:01.566" endtime="20230303 12:03:01.566"/>
 </kw>
-<status status="PASS" starttime="20230302 17:41:17.624" endtime="20230302 17:41:22.620"/>
-</kw>
-<kw name="Acessar home do site amazon.com.br" library="resource">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230302 17:41:22.621" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
-<status status="PASS" starttime="20230302 17:41:22.621" endtime="20230302 17:41:30.960"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${menuEletronicos}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230302 17:41:30.960" endtime="20230302 17:41:31.005"/>
-</kw>
-<status status="PASS" starttime="20230302 17:41:22.620" endtime="20230302 17:41:31.005"/>
+<status status="FAIL" starttime="20230303 12:01:37.877" endtime="20230303 12:03:01.567"/>
 </kw>
 <kw name="fechar browser" library="resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230302 17:41:31.006" endtime="20230302 17:41:31.195"/>
+<status status="PASS" starttime="20230303 12:03:01.569" endtime="20230303 12:03:01.569"/>
 </kw>
-<status status="PASS" starttime="20230302 17:41:31.006" endtime="20230302 17:41:31.195"/>
+<status status="PASS" starttime="20230303 12:03:01.568" endtime="20230303 12:03:01.570"/>
 </kw>
 <doc>este teste verifica o menu "eletronicos" da amazon.com.br
 e verifica se aparece a categoria "eletronicos e informatica"</doc>
 <tag>categorias</tag>
 <tag>menu</tag>
-<status status="PASS" starttime="20230302 17:41:17.621" endtime="20230302 17:41:31.195"/>
+<status status="FAIL" starttime="20230303 12:01:37.875" endtime="20230303 12:03:01.570">Setup failed:
+WebDriverException: Message: chrome not reachable
+Stacktrace:
+0   chromedriver                        0x0000000104e69138 chromedriver + 4923704
+1   chromedriver                        0x0000000104de19d3 chromedriver + 4368851
+2   chromedriver                        0x0000000104a2a5fd chromedriver + 472573
+3   chromedriver                        0x0000000104a17bf4 chromedriver + 396276
+4   chromedriver                        0x0000000104a5b71c chromedriver + 673564
+5   chromedriver                        0x0000000104a56c9c chromedriver + 654492
+6   chromedriver                        0x0000000104a53041 chromedriver + 639041
+7   chromedriver                        0x0000000104aa18a5 chromedriver + 960677
+8   chromedriver                        0x0000000104a97d23 chromedriver + 920867
+    [ Message content over the limit has been removed. ]
+...hromedriver                        0x0000000104a60044 chromedriver + 692292
+11  chromedriver                        0x0000000104e348fe chromedriver + 4708606
+12  chromedriver                        0x0000000104e39e22 chromedriver + 4730402
+13  chromedriver                        0x0000000104e426bf chromedriver + 4765375
+14  chromedriver                        0x0000000104e3ae80 chromedriver + 4734592
+15  chromedriver                        0x0000000104e0b975 chromedriver + 4540789
+16  chromedriver                        0x0000000104e5ce78 chromedriver + 4873848
+17  chromedriver                        0x0000000104e5cff5 chromedriver + 4874229
+18  chromedriver                        0x0000000104e716de chromedriver + 4957918
+19  libsystem_pthread.dylib             0x00007fff729e4109 _pthread_start + 148
+20  libsystem_pthread.dylib             0x00007fff729dfb8b thread_start + 15</status>
 </test>
 <doc>esta suite serve para testar o site da amazon.com.br</doc>
-<status status="PASS" starttime="20230302 17:41:17.402" endtime="20230302 17:41:31.197"/>
+<status status="FAIL" starttime="20230303 12:01:33.203" endtime="20230303 12:03:01.572"/>
 </suite>
-<status status="PASS" starttime="20230302 17:41:17.373" endtime="20230302 17:41:31.199"/>
+<status status="FAIL" starttime="20230303 12:01:32.981" endtime="20230303 12:03:01.574"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">categorias</stat>
-<stat pass="1" fail="0" skip="0">menu</stat>
+<stat pass="0" fail="1" skip="0">categorias</stat>
+<stat pass="0" fail="1" skip="0">menu</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1" name="Teste">Tests.Teste</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Teste">Tests.Teste</stat>
 </suite>
 </statistics>
 <errors>

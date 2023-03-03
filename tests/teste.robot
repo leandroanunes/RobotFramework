@@ -14,8 +14,8 @@ Caso de teste 01 - Acessar menu eletronicos
     ...                    e verifica se aparece a categoria "eletronicos e informatica"
     [Tags]                 menu    categorias
     Acessar home do site amazon.com.br
-    # Entrar no menu eletronicos
-    # Verificar se o titulo da pagina e "Eletrônicos e Tecnologia | Amazon.com.br"
+    Entrar no menu eletronicos
+    Verificar se o titulo da pagina e "Eletrônicos e Tecnologia | Amazon.com.br"
     # Verificar se aparece a frase "Eletrônicos e Tecnologia"
     # Verificar se aparece a categoria "Computadores e Informática"
     
