@@ -13,7 +13,6 @@ ${eletronicosTecnologia}            //h1[contains(.,'Eletrônicos e Tecnologia')
 
 #############################################################################################################
 
-
 # textos de cada pagina - teste 01
 
 # Pagina eletronicos
@@ -61,3 +60,10 @@ ${textoVendas}                      Comece a vender na Amazon
 
 
 #############################################################################################################
+
+# teste 02 - procurando um produto
+
+${busca}                            //input[contains(@type,'text')]
+${xboxone}                          xbox one
+${pesquisar}                        //input[contains(@type,'submit')]
+${paginaXboxOne}                    Amazon.com.br : xbox one

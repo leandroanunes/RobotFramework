@@ -14,6 +14,6 @@ Caso de teste 01 - realizar a busca de um xbox one
     [Tags]                 busca     xbox
     Acessar home do site ${url}
     clickar na ${busca}
-    pesquisa por ${produto} no campo de pesquisa
-    clica no botao de %{pesquisar}
-    verifica se esta na %{paginaXboxOne} 
+    pesquisa por ${xboxone} no campo de pesquisa
+    clica no botao de ${pesquisar}
+    verifica se esta na ${paginaXboxOne} 
