@@ -6,7 +6,16 @@ ${url}                              https://www.amazon.com.br
 ${browser}                          chrome
 
 
-# textos de cada pagina
+# Menu principal
+${title}                            Amazon.com.br | Tudo pra você, de A a Z.
+${eletronicosTecnologia}            //h1[contains(.,'Eletrônicos e Tecnologia')]
+
+
+#############################################################################################################
+
+
+# textos de cada pagina - teste 01
+
 # Pagina eletronicos
 ${titleEletronicos}                 Eletrônicos e Tecnologia | Amazon.com.br
 ${textoEletronicos}                 Eletrônicos e Tecnologia
@@ -51,5 +60,4 @@ ${textoVendas}                      Comece a vender na Amazon
 
 
 
-${title}                            Amazon.com.br | Tudo pra você, de A a Z.
-${eletronicosTecnologia}            //h1[contains(.,'Eletrônicos e Tecnologia')]
+#############################################################################################################

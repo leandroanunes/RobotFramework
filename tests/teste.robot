@@ -1,6 +1,7 @@
 *** settings ***
 Resource              ../src/resource.robot
 Resource              ../data/variaveis.robot
+Resource              ../data/keywords.robot
 
 Documentation         esta suite serve para testar o site da amazon.com.br
 Test Setup            abrir browser
@@ -69,20 +70,3 @@ Caso de teste 06 - Acessar menu atendimento ao cliente
 #     Entrar no ${menuVendas}
 #     Verificar se o titulo da pagina ${titleVendas}
 #     Verificar se aparece a frase ${textoVendas}
-
-
-
-
-
-
-
-
-
-
-# realizar a busca de um produto no site amazon.com.br
-#     [Documentation]        ira realizar a busca de um "xbox one" 
-#     [Tags]                 busca 
-#     clickar na busca
-#     pesquisa por "xbox one" no campo de pesquisa
-#     clica no botao de pesquisa
-#     verifica se esta na pagina certa 
