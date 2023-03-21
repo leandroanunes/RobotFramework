@@ -23,7 +23,7 @@ ${menuEletronicos}                  //a[contains(text(),'Eletrônicos')]
 # Pagina livros
 ${menuLivros}                       //a[contains(text(),'Livros')]
 ${titleLivros}                      Livros | Amazon.com.br
-${textoLivros}                      Loja de Livros
+${textoLivros}                      Títulos em destaque
 
 
 # Pagina musica

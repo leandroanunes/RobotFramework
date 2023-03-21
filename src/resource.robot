@@ -7,10 +7,11 @@ Acessar home do site ${url}
     Go To    ${url}
 
 Entrar no ${menu}
+    sleep                            1s
     Wait Until Element Is Visible    ${menu}
 
     Click Element                    ${menu}
-    Sleep    2s
+    Sleep                            2s
 
 Verificar se o titulo da pagina ${tituloPagina}
     Wait Until Page Contains         ${tituloPagina}
