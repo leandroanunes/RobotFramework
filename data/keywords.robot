@@ -9,3 +9,10 @@ abrir browser
 
 fechar browser
     Close Browser
+
+
+
+# abrir teste de variaveis
+#     Open Browser    
+
+# fechar teste de variaveis

@@ -7,7 +7,7 @@ Documentation        exemplos de tipos de variáveis para ficar anotado
 ${simples}           variavel simples com um valor fixo 
 
 #variavel de lista
-@{frutas}             maca    banana    melancia    uva
+@{listas}             maca    banana    melancia    uva
 
 #variavel de pessoas para guardar os dados de uma pessoa
 &{nomes}           nome=Leandro Nunes    email=teste@gmail.com    idade=19    sexo=masculino
