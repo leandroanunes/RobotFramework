@@ -1,91 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230321 10:27:15.030" rpa="false" schemaversion="3">
-<suite id="s1" name="Teste2" source="C:\Users\leand\Desktop\Leandro\robot\tests\teste2.robot">
-<test id="s1-t1" name="Caso de teste 01 - realizar a busca de um xbox one" line="12">
-<kw name="abrir browser" library="keywords" type="SETUP">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=chrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230321 10:27:15.632" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20230321 10:27:15.632" endtime="20230321 10:27:20.491"/>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20230321 12:07:46.702" rpa="false" schemaversion="3">
+<suite id="s1" name="tiposDeVariaveis" source="C:\Users\leand\Desktop\Leandro\robot\tests\tiposDeVariaveis.robot">
+<test id="s1-t1" name="teste 01 - testando as variaveis" line="8">
+<kw name="testando a variavel ${simples}" library="tiposDeVariaveisResource" sourcename="testando a variavel ${keywordSimples}">
+<kw name="Log" library="BuiltIn">
+<arg>${keywordSimples}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230321 12:07:46.766" level="INFO">variavel simples com um valor fixo</msg>
+<status status="PASS" starttime="20230321 12:07:46.766" endtime="20230321 12:07:46.766"/>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230321 10:27:20.492" endtime="20230321 10:27:20.718"/>
+<status status="PASS" starttime="20230321 12:07:46.765" endtime="20230321 12:07:46.766"/>
 </kw>
-<status status="PASS" starttime="20230321 10:27:15.630" endtime="20230321 10:27:20.718"/>
+<kw name="testando a variavel de @{listas}" library="tiposDeVariaveisResource" sourcename="testando a variavel ${keywordSimples}">
+<kw name="Log" library="BuiltIn">
+<arg>${keywordSimples}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230321 12:07:46.768" level="INFO">de ['maca', 'banana', 'melancia', 'uva']</msg>
+<status status="PASS" starttime="20230321 12:07:46.768" endtime="20230321 12:07:46.768"/>
 </kw>
-<kw name="Acessar home do site ${url}" library="resourceBuscaProduto" sourcename="Acessar home do site ${url}">
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${url}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230321 10:27:20.721" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
-<status status="PASS" starttime="20230321 10:27:20.720" endtime="20230321 10:27:25.188"/>
+<status status="PASS" starttime="20230321 12:07:46.767" endtime="20230321 12:07:46.768"/>
 </kw>
-<status status="PASS" starttime="20230321 10:27:20.719" endtime="20230321 10:27:25.188"/>
+<kw name="testando a variavel de &amp;{nomes}" library="tiposDeVariaveisResource" sourcename="testando a variavel ${keywordSimples}">
+<kw name="Log" library="BuiltIn">
+<arg>${keywordSimples}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230321 12:07:46.775" level="INFO">de {'nome': 'Leandro Nunes', 'email': 'teste@gmail.com', 'idade': '19', 'sexo': 'masculino'}</msg>
+<status status="PASS" starttime="20230321 12:07:46.775" endtime="20230321 12:07:46.776"/>
 </kw>
-<kw name="clickar na ${busca}" library="resourceBuscaProduto" sourcename="clickar na ${busca}">
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${busca}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230321 10:27:25.195" level="INFO">Clicking element '//input[contains(@type,'text')]'.</msg>
-<status status="PASS" starttime="20230321 10:27:25.192" endtime="20230321 10:27:25.716"/>
+<status status="PASS" starttime="20230321 12:07:46.769" endtime="20230321 12:07:46.777"/>
 </kw>
-<status status="PASS" starttime="20230321 10:27:25.191" endtime="20230321 10:27:25.716"/>
-</kw>
-<kw name="pesquisa por ${xboxone} no campo de pesquisa" library="resourceBuscaProduto" sourcename="pesquisa por ${produto} no campo de pesquisa">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${busca}</arg>
-<arg>${produto}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230321 10:27:25.722" level="INFO">Typing text 'xbox one' into text field '//input[contains(@type,'text')]'.</msg>
-<status status="PASS" starttime="20230321 10:27:25.722" endtime="20230321 10:27:25.999"/>
-</kw>
-<status status="PASS" starttime="20230321 10:27:25.720" endtime="20230321 10:27:26.000"/>
-</kw>
-<kw name="clica no botao de ${pesquisar}" library="resourceBuscaProduto" sourcename="clica no botao de ${btnPesquisar}">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${btnPesquisar}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230321 10:27:26.002" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
-<status status="PASS" starttime="20230321 10:27:26.001" endtime="20230321 10:27:30.269"/>
-</kw>
-<status status="PASS" starttime="20230321 10:27:26.001" endtime="20230321 10:27:30.270"/>
-</kw>
-<kw name="verifica se esta na ${paginaXboxOne}" library="resourceBuscaProduto" sourcename="verifica se esta na ${pageTitle}">
-<kw name="Title Should Be" library="SeleniumLibrary">
-<arg>${pageTitle}</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<msg timestamp="20230321 10:27:34.126" level="INFO">Page title is 'Amazon.com.br : xbox one'.</msg>
-<status status="PASS" starttime="20230321 10:27:30.274" endtime="20230321 10:27:34.126"/>
-</kw>
-<status status="PASS" starttime="20230321 10:27:30.272" endtime="20230321 10:27:34.127"/>
-</kw>
-<kw name="fechar browser" library="keywords" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230321 10:27:34.131" endtime="20230321 10:27:37.190"/>
-</kw>
-<status status="PASS" starttime="20230321 10:27:34.130" endtime="20230321 10:27:37.191"/>
-</kw>
-<doc>ira realizar a busca de um "xbox one"</doc>
-<tag>busca</tag>
-<tag>xbox</tag>
-<status status="PASS" starttime="20230321 10:27:15.627" endtime="20230321 10:27:37.192"/>
+<status status="PASS" starttime="20230321 12:07:46.763" endtime="20230321 12:07:46.779"/>
 </test>
-<doc>esta suite serve para testar o site da amazon.com.br</doc>
-<status status="PASS" starttime="20230321 10:27:15.035" endtime="20230321 10:27:37.202"/>
+<status status="PASS" starttime="20230321 12:07:46.707" endtime="20230321 12:07:46.783"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">busca</stat>
-<stat pass="1" fail="0" skip="0">xbox</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Teste2">Teste2</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="tiposDeVariaveis">tiposDeVariaveis</stat>
 </suite>
 </statistics>
 <errors>

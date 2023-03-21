@@ -62,8 +62,17 @@ ${textoVendas}                      Comece a vender na Amazon
 #############################################################################################################
 
 # teste 02 - procurando um produto
+# variaveis usadas em todas os casos. "universais"
 
-${busca}                            //input[contains(@type,'text')]
-${xboxone}                          xbox one
 ${pesquisar}                        //input[contains(@type,'submit')]
+${busca}                            //input[contains(@type,'text')]
+
+
+# caso 01 - xbox one
+${xboxone}                          xbox one
 ${paginaXboxOne}                    Amazon.com.br : xbox one
+
+
+# caso 02 - ps4
+${PS4}                              playstation 4
+${paginaPS4}                        Amazon.com.br : playstation 4
