@@ -1,5 +1,5 @@
 *** Settings ***
-Resource       ../src/tiposDeVariaveisResource.robot
+Resource       ../src/tiposDeVariaveisKW.robot
 Resource       ../data/tiposVariaveis.robot
 Resource       ../data/keywords.robot
 

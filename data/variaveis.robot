@@ -23,13 +23,13 @@ ${menuEletronicos}                  //a[contains(text(),'Eletrônicos')]
 # Pagina livros
 ${menuLivros}                       //a[contains(text(),'Livros')]
 ${titleLivros}                      Livros | Amazon.com.br
-${textoLivros}                      Títulos em destaque
+${textoLivros}                      Loja de Livros
 
 
 # Pagina musica
 ${menuMusica}                       //a[contains(text(),'Música')]
 ${titleMusica}                      Amazon Music Unlimited 
-${textoMusica}                      Acesso ilimitado a 100 milhões de músicas
+${textoMusica}                      Por tempo limitado
 
 
 # Pagina ofertas
@@ -76,3 +76,11 @@ ${paginaXboxOne}                    Amazon.com.br : xbox one
 # caso 02 - ps4
 ${PS4}                              playstation 4
 ${paginaPS4}                        Amazon.com.br : playstation 4
+
+
+#############################################################################################################
+
+# Testando laços de repetição
+# IF
+
+${num5}            ${5}

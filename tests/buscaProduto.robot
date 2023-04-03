@@ -1,5 +1,5 @@
 *** settings ***
-Resource              ../src/resourceBuscaProduto.robot
+Resource              ../src/buscaProdutoKW.robot
 Resource              ../data/variaveis.robot
 Resource              ../data/keywords.robot
 

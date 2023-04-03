@@ -1,5 +1,5 @@
 *** settings ***
-Resource              ../src/resource.robot
+Resource              ../src/acessarMenuKW.robot
 Resource              ../data/variaveis.robot
 Resource              ../data/keywords.robot
 
@@ -8,16 +8,8 @@ Test Setup            abrir browser
 Test Teardown         fechar browser
 
 *** test cases ***
-Caso de teste 01 - Acessar menu eletronicos
-    [Documentation]        este teste verifica o menu "eletronicos" da amazon.com.br    
-    ...                    e verifica se está na pagina "eletronicos e informatica"
-    [Tags]                 menuEletronicos    categorias
-    Acessar home do site ${url}
-    Entrar no ${menuEletronicos}
-    Verificar se o titulo da pagina ${titleEletronicos}
-    Verificar se aparece a frase ${textoEletronicos}
     
-Caso de teste 02 - Acessar menu livros
+Caso de teste 01 - Acessar menu livros
     [Documentation]        este teste verifica o menu "livros" da amazon.com.br    
     ...                    e verifica se realmente está na pagina "livros"
     [Tags]                 menuLivros    categorias
@@ -26,7 +18,7 @@ Caso de teste 02 - Acessar menu livros
     Verificar se o titulo da pagina ${titleLivros}
     Verificar se aparece a frase ${textoLivros}
 
-Caso de teste 03 - Acessar menu musica
+Caso de teste 02 - Acessar menu musica
     [Documentation]        este teste verifica o menu "Música" da amazon.com.br    
     ...                    e verifica se realmente está na pagina "Música"
     [Tags]                 menuMusica    categorias
@@ -35,7 +27,7 @@ Caso de teste 03 - Acessar menu musica
     Verificar se o titulo da pagina ${titleMusica} 
     Verificar se aparece a frase ${textoMusica}
 
-Caso de teste 04 - Acessar menu ofertas do dia
+Caso de teste 03 - Acessar menu ofertas do dia
     [Documentation]        este teste verifica o menu "Ofertas e Promoções" da amazon.com.br    
     ...                    e verifica se realmente está na pagina "Ofertas e Promoções"
     [Tags]                 menuOfertas    categorias
@@ -44,7 +36,7 @@ Caso de teste 04 - Acessar menu ofertas do dia
     Verificar se o titulo da pagina ${titleOfertas} 
     Verificar se aparece a frase ${textoOfertas}
 
-Caso de teste 05 - Acessar menu mais vendidos
+Caso de teste 04 - Acessar menu mais vendidos
     [Documentation]        este teste verifica o menu "Mais vendidos" da amazon.com.br    
     ...                    e verifica se realmente está na pagina "Mais vendidos"
     [Tags]                 menuMaisVendidos    categorias
@@ -53,7 +45,7 @@ Caso de teste 05 - Acessar menu mais vendidos
     Verificar se o titulo da pagina ${titleMaisVendidos} 
     Verificar se aparece a frase ${textoMaisVendidos}
 
-Caso de teste 06 - Acessar menu atendimento ao cliente
+Caso de teste 05 - Acessar menu atendimento ao cliente
     [Documentation]        este teste verifica o menu "Atendimento ao cliente" da amazon.com.br    
     ...                    e verifica se aparece a categoria "atendimento ao cliente"
     [Tags]                 menuCliente    categorias
