@@ -82,5 +82,5 @@ ${paginaPS4}                        Amazon.com.br : playstation 4
 
 # Testando laços de repetição
 # IF
-
+${numero}          ${3}
 ${num5}            ${5}

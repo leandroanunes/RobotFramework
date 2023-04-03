@@ -9,12 +9,21 @@ testando if para valor menor que ${num}
         Log        numero é MENOR que 5
     END
 
-
 testando if para valor maior que ${num}
     IF    ${num} > ${num5}
         Log        numero é MAIOR que 5
     END
+
 testando if para valor igual ao ${num}
     IF    ${num} == ${num5}
+        Log        numero é IGUAL A 5
+    END
+
+if dentro de if ${num}
+    IF    ${num} > ${num5}
+        Log        numero é MAIOR que 5
+    ELSE IF    ${num} < ${num5}
+        Log        numero é MENOR que 5
+    ELSE IF    ${num} == ${num5}
         Log        numero é IGUAL A 5
     END
