@@ -81,6 +81,11 @@ ${paginaPS4}                        Amazon.com.br : playstation 4
 #############################################################################################################
 
 # Testando laços de repetição
-# IF
 ${numero}          ${3}
 ${num5}            ${5}
+
+@{numeros}         ${1}    ${2}    ${3}    ${4}    ${5}
+
+@{menus}           ${1}    ${2}    ${3}    ${4}    ${5}    ${6}    ${7} 
+
+@{frutas}             maca    banana    melancia    uva    abacaxi
