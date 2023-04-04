@@ -27,14 +27,12 @@ Testando if dentro de if
         Log        numero é MAIOR que 5
         fechar browser
 
-
     ELSE IF    ${numero} < ${num5}
         abrir browser
         Acessar home do site ${url}
         Entrar no ${menuMusica}
         Log        numero é MENOR que 5
         fechar browser
-
 
     ELSE IF    ${numero} == ${num5}
         abrir browser
