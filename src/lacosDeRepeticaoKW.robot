@@ -9,26 +9,26 @@ Resource               ../data/keywords.robot
 # IF
 testando if para valor menor que ${num}
     IF    ${num} < ${num5}
-        Log        numero é MENOR que 5
+        Log To Console        numero é MENOR que 5
     END
 
 testando if para valor maior que ${num}
     IF    ${num} > ${num5}
-        Log        numero é MAIOR que 5
+        Log To Console        numero é MAIOR que 5
     END
 
 testando if para valor igual ao ${num}
     IF    ${num} == ${num5}
-        Log        numero é IGUAL A 5
+        Log To Console        numero é IGUAL A 5
     END
 
 if dentro de if ${num}
     IF    ${num} > ${num5}
-        Log        numero é MAIOR que 5
+        Log To Console        numero é MAIOR que 5
     ELSE IF    ${num} < ${num5}
-        Log        numero é MENOR que 5
+        Log To Console        numero é MENOR que 5
     ELSE IF    ${num} == ${num5}
-        Log        numero é IGUAL A 5
+        Log To Console        numero é IGUAL A 5
     END
 #############################################################################################################
 # IF DENTRO DE IF
@@ -36,24 +36,24 @@ Testando If dentro de If
     IF    ${numero} > ${num5}
         Acessar home do site ${url}
         Entrar no ${menuLivros}
-        Log        numero é MAIOR que 5
+        Log To Console        numero é MAIOR que 5
 
     ELSE IF    ${numero} < ${num5}
         Acessar home do site ${url}
         Entrar no ${menuMusica}
-        Log        numero é MENOR que 5
+        Log To Console        numero é MENOR que 5
 
     ELSE IF    ${numero} == ${num5}
         Acessar home do site ${url}
         Entrar no ${menuMaisVendidos}
-        Log        numero é IGUAL A 5
+        Log To Console        numero é IGUAL A 5
     END
 #############################################################################################################
 # FOR IN RANGE
 
 usando FOR IN RANGE para numeros de 1 ate 5
     FOR    ${numeros}    IN RANGE    0    5    
-        Log    seu numero é: ${numeros}
+        Log To Console    seu numero é: ${numeros}
     END
 
 
@@ -98,6 +98,6 @@ usando o FOR IN RANGE para abrir todos os menus do AcessarMenu
 
 testando FOR IN
     FOR    ${frutas}    IN    @{frutas}
-        Log    sua fruta é: ${frutas}
+        Log To Console    sua fruta é: ${frutas}
         
     END

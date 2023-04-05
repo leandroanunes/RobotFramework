@@ -88,4 +88,4 @@ ${num5}            ${5}
 
 @{menus}           ${1}    ${2}    ${3}    ${4}    ${5}    ${6}    ${7} 
 
-@{frutas}             maca    banana    melancia    uva    abacaxi
+@{frutas}          vazio    maca    banana    melancia    uva    abacaxi
