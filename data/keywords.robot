@@ -4,7 +4,7 @@ Library     SeleniumLibrary
 *** Keywords ***
 
 abrir browser 
-    Open Browser                    browser=chrome     
+    Open Browser                    browser=headlessChrome
     Maximize Browser Window
 
 fechar browser

@@ -82,6 +82,7 @@ ${paginaPS4}                        Amazon.com.br : playstation 4
 
 # Testando laços de repetição
 ${numero}          ${3}
+${num}             ${1}
 ${num5}            ${5}
 
 @{numeros}         ${1}    ${2}    ${3}    ${4}    ${5}

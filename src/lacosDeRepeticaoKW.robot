@@ -35,7 +35,7 @@ if dentro de if ${num}
 Testando If dentro de If
     IF    ${numero} > ${num5}
         Acessar home do site ${url}
-        Entrar no ${menuLivros}
+        Entrar no ${menuOfertas}
         Log To Console        numero é MAIOR que 5
 
     ELSE IF    ${numero} < ${num5}
@@ -58,32 +58,26 @@ usando FOR IN RANGE para numeros de 1 ate 5
 
 
 usando o FOR IN RANGE para abrir todos os menus do AcessarMenu
-    FOR    ${menus}    IN RANGE    1    5    
+    FOR    ${menus}    IN RANGE    1    4      
         IF    ${menus} == 1
-            Acessar home do site ${url}
-            Entrar no ${menuLivros}
-            Verificar se o titulo da pagina ${titleLivros}
-            Verificar se aparece a frase ${textoLivros}
-        END    
-        IF    ${menus} == 2
             Acessar home do site ${url}
             Entrar no ${menuMusica}
             Verificar se o titulo da pagina ${titleMusica} 
             Verificar se aparece a frase ${textoMusica}
         END
-        IF    ${menus} == 3
+        IF    ${menus} == 2
             Acessar home do site ${url}
             Entrar no ${menuOfertas}
             Verificar se o titulo da pagina ${titleOfertas} 
             Verificar se aparece a frase ${textoOfertas}
         END
-        IF    ${menus} == 4
+        IF    ${menus} == 3
             Acessar home do site ${url}
             Entrar no ${menuMaisVendidos}
             Verificar se o titulo da pagina ${titleMaisVendidos} 
             Verificar se aparece a frase ${textoMaisVendidos}
         END
-        IF    ${menus} == 5
+        IF    ${menus} == 4
             Acessar home do site ${url}
             Entrar no ${menuOfertas}
             Verificar se o titulo da pagina ${titleOfertas} 
@@ -100,4 +94,18 @@ testando FOR IN
     FOR    ${frutas}    IN    @{frutas}
         Log To Console    sua fruta é: ${frutas}
         
+    END
+
+# Para sair do loop use o comando: Exit For Loop
+# Exemplo:
+# # Exit For Loop If    condition ($'{frutas}' == 'banana')
+
+#############################################################################################################
+# WHILE
+
+testando while
+    WHILE                    ${num} < 8
+    Log To Console           ${num} ainda nao é 8
+
+    ${num}     Set Variable     ${num+1}
     END

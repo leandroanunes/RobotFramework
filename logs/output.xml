@@ -1,7 +1,1115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.0 on darwin)" generated="20230404 17:18:00.981" rpa="false" schemaversion="3">
-<suite id="s1" name="lacosDeRepeticao" source="/Users/AMN/Documents/leandro/robot/tests/lacosDeRepeticao.robot">
-<test id="s1-t1" name="Testando uma lista simples de FOR IN" line="50">
+<robot generator="Robot 5.0.1 (Python 3.8.0 on darwin)" generated="20230424 18:56:44.869" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="/Users/AMN/Documents/leandro/robot/tests">
+<suite id="s1-s1" name="acessarMenu" source="/Users/AMN/Documents/leandro/robot/tests/acessarMenu.robot">
+<test id="s1-s1-t1" name="Caso de teste 02 - Acessar menu musica" line="21">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:56:45.168" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:56:45.168" endtime="20230424 18:56:46.926"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:56:46.926" endtime="20230424 18:56:47.033"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:45.167" endtime="20230424 18:56:47.034"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:56:47.036" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:56:47.035" endtime="20230424 18:56:50.407"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:47.034" endtime="20230424 18:56:50.408"/>
+</kw>
+<kw name="Entrar no ${menuMusica}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:56:51.412" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:56:50.409" endtime="20230424 18:56:51.412"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:56:51.413" endtime="20230424 18:56:51.453"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:56:51.454" level="INFO">Clicking element '//a[contains(text(),'Música')]'.</msg>
+<status status="PASS" starttime="20230424 18:56:51.454" endtime="20230424 18:56:52.088"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:56:54.090" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:56:52.089" endtime="20230424 18:56:54.090"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:50.408" endtime="20230424 18:56:54.090"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMusica}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:56:54.091" endtime="20230424 18:56:54.107"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:56:54.112" level="INFO">Page title is 'Amazon Music Unlimited'.</msg>
+<status status="PASS" starttime="20230424 18:56:54.108" endtime="20230424 18:56:54.112"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:54.090" endtime="20230424 18:56:54.113"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMusica}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:56:54.114" endtime="20230424 18:56:54.128"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:54.113" endtime="20230424 18:56:54.128"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:56:54.129" endtime="20230424 18:56:54.307"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:54.129" endtime="20230424 18:56:54.307"/>
+</kw>
+<doc>este teste verifica o menu "Música" da amazon.com.br
+e verifica se realmente está na pagina "Música"</doc>
+<tag>categorias</tag>
+<tag>menuMusica</tag>
+<status status="PASS" starttime="20230424 18:56:45.166" endtime="20230424 18:56:54.307"/>
+</test>
+<test id="s1-s1-t2" name="Caso de teste 03 - Acessar menu ofertas do dia" line="30">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:56:54.311" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:56:54.311" endtime="20230424 18:56:55.422"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:56:55.423" endtime="20230424 18:56:55.646"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:54.310" endtime="20230424 18:56:55.646"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:56:55.648" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:56:55.648" endtime="20230424 18:56:57.465"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:55.647" endtime="20230424 18:56:57.466"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:56:58.468" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:56:57.467" endtime="20230424 18:56:58.468"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:56:58.468" endtime="20230424 18:56:58.497"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:56:58.498" level="INFO">Clicking element '//a[contains(text(),'Ofertas do Dia')]'.</msg>
+<status status="PASS" starttime="20230424 18:56:58.497" endtime="20230424 18:56:58.889"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:00.890" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:56:58.889" endtime="20230424 18:57:00.890"/>
+</kw>
+<status status="PASS" starttime="20230424 18:56:57.466" endtime="20230424 18:57:00.891"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:00.891" endtime="20230424 18:57:00.913"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:00.918" level="INFO">Page title is 'Ofertas e Promoções | Amazon.com.br'.</msg>
+<status status="PASS" starttime="20230424 18:57:00.913" endtime="20230424 18:57:00.918"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:00.891" endtime="20230424 18:57:00.918"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:00.919" endtime="20230424 18:57:00.943"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:00.919" endtime="20230424 18:57:00.943"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:00.945" endtime="20230424 18:57:01.080"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:00.944" endtime="20230424 18:57:01.080"/>
+</kw>
+<doc>este teste verifica o menu "Ofertas e Promoções" da amazon.com.br
+e verifica se realmente está na pagina "Ofertas e Promoções"</doc>
+<tag>categorias</tag>
+<tag>menuOfertas</tag>
+<status status="PASS" starttime="20230424 18:56:54.309" endtime="20230424 18:57:01.080"/>
+</test>
+<test id="s1-s1-t3" name="Caso de teste 04 - Acessar menu mais vendidos" line="39">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:01.084" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:01.083" endtime="20230424 18:57:02.350"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:02.351" endtime="20230424 18:57:02.456"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:01.083" endtime="20230424 18:57:02.456"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:02.458" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:02.458" endtime="20230424 18:57:04.461"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:02.457" endtime="20230424 18:57:04.462"/>
+</kw>
+<kw name="Entrar no ${menuMaisVendidos}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:05.466" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:04.463" endtime="20230424 18:57:05.466"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:05.467" endtime="20230424 18:57:05.497"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:05.498" level="INFO">Clicking element '//a[contains(text(),'Mais Vendidos')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:05.498" endtime="20230424 18:57:06.465"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:08.468" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:06.466" endtime="20230424 18:57:08.468"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:04.462" endtime="20230424 18:57:08.468"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:08.471" endtime="20230424 18:57:08.493"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:08.498" level="INFO">Page title is 'Amazon.com.br Mais Vendidos: Os itens mais populares na Amazon'.</msg>
+<status status="PASS" starttime="20230424 18:57:08.493" endtime="20230424 18:57:08.498"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:08.469" endtime="20230424 18:57:08.499"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:08.500" endtime="20230424 18:57:08.518"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:08.499" endtime="20230424 18:57:08.518"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:08.520" endtime="20230424 18:57:08.649"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:08.519" endtime="20230424 18:57:08.649"/>
+</kw>
+<doc>este teste verifica o menu "Mais vendidos" da amazon.com.br
+e verifica se realmente está na pagina "Mais vendidos"</doc>
+<tag>categorias</tag>
+<tag>menuMaisVendidos</tag>
+<status status="PASS" starttime="20230424 18:57:01.081" endtime="20230424 18:57:08.649"/>
+</test>
+<test id="s1-s1-t4" name="Caso de teste 05 - Acessar menu atendimento ao cliente" line="48">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:08.653" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:08.653" endtime="20230424 18:57:10.263"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:10.263" endtime="20230424 18:57:10.369"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:08.652" endtime="20230424 18:57:10.369"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:10.371" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:10.370" endtime="20230424 18:57:12.366"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:10.369" endtime="20230424 18:57:12.366"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:13.369" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:12.368" endtime="20230424 18:57:13.369"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:13.369" endtime="20230424 18:57:13.397"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:13.398" level="INFO">Clicking element '//a[contains(text(),'Ofertas do Dia')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:13.397" endtime="20230424 18:57:13.838"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:15.843" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:13.840" endtime="20230424 18:57:15.843"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:12.367" endtime="20230424 18:57:15.843"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:15.844" endtime="20230424 18:57:16.008"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:16.016" level="INFO">Page title is 'Ofertas e Promoções | Amazon.com.br'.</msg>
+<status status="PASS" starttime="20230424 18:57:16.008" endtime="20230424 18:57:16.016"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:15.844" endtime="20230424 18:57:16.017"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:16.018" endtime="20230424 18:57:16.040"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:16.017" endtime="20230424 18:57:16.041"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:16.042" endtime="20230424 18:57:16.172"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:16.041" endtime="20230424 18:57:16.172"/>
+</kw>
+<doc>este teste verifica o menu "Atendimento ao cliente" da amazon.com.br
+e verifica se aparece a categoria "atendimento ao cliente"</doc>
+<tag>categorias</tag>
+<tag>menuCliente</tag>
+<status status="PASS" starttime="20230424 18:57:08.651" endtime="20230424 18:57:16.172"/>
+</test>
+<doc>esta suite serve para testar o site da amazon.com.br</doc>
+<status status="PASS" starttime="20230424 18:56:44.902" endtime="20230424 18:57:16.174"/>
+</suite>
+<suite id="s1-s2" name="buscaProduto" source="/Users/AMN/Documents/leandro/robot/tests/buscaProduto.robot">
+<test id="s1-s2-t1" name="Caso de teste 01 - realizar a busca de um xbox one" line="12">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:16.234" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:16.234" endtime="20230424 18:57:17.889"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:17.890" endtime="20230424 18:57:17.997"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:16.233" endtime="20230424 18:57:17.998"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="buscaProdutoKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:18.000" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:17.999" endtime="20230424 18:57:19.834"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:17.998" endtime="20230424 18:57:19.834"/>
+</kw>
+<kw name="clickar na ${busca}" library="buscaProdutoKW" sourcename="clickar na ${busca}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${busca}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:19.837" level="INFO">Clicking element '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:19.836" endtime="20230424 18:57:20.006"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:19.835" endtime="20230424 18:57:20.007"/>
+</kw>
+<kw name="pesquisa por ${xboxone} no campo de pesquisa" library="buscaProdutoKW" sourcename="pesquisa por ${produto} no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${busca}</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:20.008" level="INFO">Typing text 'xbox one' into text field '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:20.008" endtime="20230424 18:57:20.358"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:20.007" endtime="20230424 18:57:20.358"/>
+</kw>
+<kw name="clica no botao de ${pesquisar}" library="buscaProdutoKW" sourcename="clica no botao de ${btnPesquisar}">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btnPesquisar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:20.360" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:20.359" endtime="20230424 18:57:20.460"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:20.359" endtime="20230424 18:57:20.460"/>
+</kw>
+<kw name="verifica se esta na ${paginaXboxOne}" library="buscaProdutoKW" sourcename="verifica se esta na ${pageTitle}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${pageTitle}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:20.461" endtime="20230424 18:57:20.857"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${pageTitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:20.863" level="INFO">Page title is 'Amazon.com.br : xbox one'.</msg>
+<status status="PASS" starttime="20230424 18:57:20.858" endtime="20230424 18:57:20.863"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:20.460" endtime="20230424 18:57:20.863"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:20.865" endtime="20230424 18:57:20.979"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:20.864" endtime="20230424 18:57:20.979"/>
+</kw>
+<doc>ira realizar a busca de um "xbox one"</doc>
+<tag>busca</tag>
+<tag>xbox</tag>
+<status status="PASS" starttime="20230424 18:57:16.232" endtime="20230424 18:57:20.979"/>
+</test>
+<test id="s1-s2-t2" name="Caso de teste 02 - realizar a busca de um playstation 4" line="22">
+<kw name="abrir browser" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:20.985" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:20.984" endtime="20230424 18:57:22.159"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:22.159" endtime="20230424 18:57:22.268"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:20.984" endtime="20230424 18:57:22.268"/>
+</kw>
+<kw name="Acessar home do site ${url}" library="buscaProdutoKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:22.270" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:22.270" endtime="20230424 18:57:23.431"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:22.269" endtime="20230424 18:57:23.431"/>
+</kw>
+<kw name="clickar na ${busca}" library="buscaProdutoKW" sourcename="clickar na ${busca}">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${busca}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:23.433" level="INFO">Clicking element '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:23.432" endtime="20230424 18:57:23.568"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:23.432" endtime="20230424 18:57:23.568"/>
+</kw>
+<kw name="pesquisa por ${PS4} no campo de pesquisa" library="buscaProdutoKW" sourcename="pesquisa por ${produto} no campo de pesquisa">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${busca}</arg>
+<arg>${produto}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:23.570" level="INFO">Typing text 'playstation 4' into text field '//input[contains(@type,'text')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:23.570" endtime="20230424 18:57:23.686"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:23.569" endtime="20230424 18:57:23.686"/>
+</kw>
+<kw name="clica no botao de ${pesquisar}" library="buscaProdutoKW" sourcename="clica no botao de ${btnPesquisar}">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${btnPesquisar}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:23.687" level="INFO">Clicking button '//input[contains(@type,'submit')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:23.687" endtime="20230424 18:57:25.993"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:23.686" endtime="20230424 18:57:25.993"/>
+</kw>
+<kw name="verifica se esta na ${paginaPS4}" library="buscaProdutoKW" sourcename="verifica se esta na ${pageTitle}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${pageTitle}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:25.995" endtime="20230424 18:57:26.017"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${pageTitle}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:26.023" level="INFO">Page title is 'Amazon.com.br : playstation 4'.</msg>
+<status status="PASS" starttime="20230424 18:57:26.018" endtime="20230424 18:57:26.023"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:25.994" endtime="20230424 18:57:26.023"/>
+</kw>
+<kw name="fechar browser" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:26.024" endtime="20230424 18:57:26.122"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:26.023" endtime="20230424 18:57:26.122"/>
+</kw>
+<doc>ira realizar a busca de um "playstation 4"</doc>
+<tag>busca</tag>
+<tag>PS4</tag>
+<status status="PASS" starttime="20230424 18:57:20.982" endtime="20230424 18:57:26.122"/>
+</test>
+<doc>esta suite serve para testar o site da amazon.com.br</doc>
+<status status="PASS" starttime="20230424 18:57:16.177" endtime="20230424 18:57:26.125"/>
+</suite>
+<suite id="s1-s3" name="lacosDeRepeticao" source="/Users/AMN/Documents/leandro/robot/tests/lacosDeRepeticao.robot">
+<test id="s1-s3-t1" name="Testando IF" line="14">
+<kw name="testando if para valor menor que ${2}" library="lacosDeRepeticaoKW" sourcename="testando if para valor menor que ${num}">
+<if>
+<branch type="IF" condition="${num} &lt; ${num5}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é MENOR que 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:26.173" endtime="20230424 18:57:26.173"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:26.173" endtime="20230424 18:57:26.174"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:26.173" endtime="20230424 18:57:26.174"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:26.171" endtime="20230424 18:57:26.174"/>
+</kw>
+<kw name="testando if para valor maior que ${8}" library="lacosDeRepeticaoKW" sourcename="testando if para valor maior que ${num}">
+<if>
+<branch type="IF" condition="${num} &gt; ${num5}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é MAIOR que 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:26.176" endtime="20230424 18:57:26.176"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:26.176" endtime="20230424 18:57:26.177"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:26.176" endtime="20230424 18:57:26.177"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:26.174" endtime="20230424 18:57:26.177"/>
+</kw>
+<kw name="testando if para valor igual ao ${5}" library="lacosDeRepeticaoKW" sourcename="testando if para valor igual ao ${num}">
+<if>
+<branch type="IF" condition="${num} == ${num5}">
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é IGUAL A 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:26.179" endtime="20230424 18:57:26.179"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:26.179" endtime="20230424 18:57:26.179"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:26.179" endtime="20230424 18:57:26.179"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:26.177" endtime="20230424 18:57:26.180"/>
+</kw>
+<doc>testando algumas funcionalidades do IF</doc>
+<tag>IF</tag>
+<tag>num5</tag>
+<status status="PASS" starttime="20230424 18:57:26.170" endtime="20230424 18:57:26.181"/>
+</test>
+<test id="s1-s3-t2" name="Testando if dentro de if" line="25">
+<kw name="abrir browser" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:26.185" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:26.185" endtime="20230424 18:57:27.217"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:27.217" endtime="20230424 18:57:27.326"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:26.184" endtime="20230424 18:57:27.327"/>
+</kw>
+<kw name="Testando If dentro de If" library="lacosDeRepeticaoKW">
+<if>
+<branch type="IF" condition="${numero} &gt; ${num5}">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:27.328" endtime="20230424 18:57:27.328"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:27.328" endtime="20230424 18:57:27.329"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é MAIOR que 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230424 18:57:27.329" endtime="20230424 18:57:27.329"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:27.328" endtime="20230424 18:57:27.329"/>
+</branch>
+<branch type="ELSE IF" condition="${numero} &lt; ${num5}">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:27.330" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:27.330" endtime="20230424 18:57:29.213"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:27.329" endtime="20230424 18:57:29.213"/>
+</kw>
+<kw name="Entrar no ${menuMusica}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:30.216" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:29.214" endtime="20230424 18:57:30.216"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:30.217" endtime="20230424 18:57:30.245"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:30.246" level="INFO">Clicking element '//a[contains(text(),'Música')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:30.246" endtime="20230424 18:57:30.671"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:32.674" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:30.672" endtime="20230424 18:57:32.674"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:29.213" endtime="20230424 18:57:32.674"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é MENOR que 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.675" endtime="20230424 18:57:32.676"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:27.329" endtime="20230424 18:57:32.676"/>
+</branch>
+<branch type="ELSE IF" condition="${numero} == ${num5}">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:32.676" endtime="20230424 18:57:32.676"/>
+</kw>
+<kw name="Entrar no ${menuMaisVendidos}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:32.677" endtime="20230424 18:57:32.677"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>numero é IGUAL A 5</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20230424 18:57:32.677" endtime="20230424 18:57:32.677"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:32.676" endtime="20230424 18:57:32.677"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:27.328" endtime="20230424 18:57:32.677"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:27.327" endtime="20230424 18:57:32.678"/>
+</kw>
+<kw name="fechar browser" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:32.679" endtime="20230424 18:57:32.804"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.678" endtime="20230424 18:57:32.804"/>
+</kw>
+<doc>testando algumas funcionalidades do IF</doc>
+<tag>IF</tag>
+<tag>testandoIF</tag>
+<status status="PASS" starttime="20230424 18:57:26.182" endtime="20230424 18:57:32.804"/>
+</test>
+<test id="s1-s3-t3" name="Testando o FOR IN RANGE" line="35">
+<kw name="usando FOR IN RANGE para numeros de 1 ate 5" library="lacosDeRepeticaoKW">
+<for flavor="IN RANGE">
+<var>${numeros}</var>
+<value>0</value>
+<value>5</value>
+<iter>
+<var name="${numeros}">0</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>seu numero é: ${numeros}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.807" endtime="20230424 18:57:32.807"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.807" endtime="20230424 18:57:32.808"/>
+</iter>
+<iter>
+<var name="${numeros}">1</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>seu numero é: ${numeros}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.808" endtime="20230424 18:57:32.808"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.808" endtime="20230424 18:57:32.808"/>
+</iter>
+<iter>
+<var name="${numeros}">2</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>seu numero é: ${numeros}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.809" endtime="20230424 18:57:32.809"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.808" endtime="20230424 18:57:32.809"/>
+</iter>
+<iter>
+<var name="${numeros}">3</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>seu numero é: ${numeros}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.810" endtime="20230424 18:57:32.810"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.809" endtime="20230424 18:57:32.810"/>
+</iter>
+<iter>
+<var name="${numeros}">4</var>
+<kw name="Log To Console" library="BuiltIn">
+<arg>seu numero é: ${numeros}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:32.810" endtime="20230424 18:57:32.811"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.810" endtime="20230424 18:57:32.811"/>
+</iter>
+<status status="PASS" starttime="20230424 18:57:32.807" endtime="20230424 18:57:32.811"/>
+</for>
+<status status="PASS" starttime="20230424 18:57:32.806" endtime="20230424 18:57:32.811"/>
+</kw>
+<doc>testando o FOR IN RANGE com numeros de 1 ate 5</doc>
+<tag>for</tag>
+<status status="PASS" starttime="20230424 18:57:32.805" endtime="20230424 18:57:32.811"/>
+</test>
+<test id="s1-s3-t4" name="Abrindo os menus usando FOR IN RANGE" line="40">
+<kw name="abrir browser" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=headlessChrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230424 18:57:32.814" level="INFO">Opening browser 'headlessChrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20230424 18:57:32.814" endtime="20230424 18:57:33.792"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230424 18:57:33.792" endtime="20230424 18:57:33.897"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:32.813" endtime="20230424 18:57:33.897"/>
+</kw>
+<kw name="usando o FOR IN RANGE para abrir todos os menus do AcessarMenu" library="lacosDeRepeticaoKW">
+<for flavor="IN RANGE">
+<var>${menus}</var>
+<value>1</value>
+<value>4</value>
+<iter>
+<var name="${menus}">1</var>
+<if>
+<branch type="IF" condition="${menus} == 1">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:33.900" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:33.900" endtime="20230424 18:57:35.814"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:33.899" endtime="20230424 18:57:35.814"/>
+</kw>
+<kw name="Entrar no ${menuMusica}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:36.818" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:35.815" endtime="20230424 18:57:36.818"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:36.819" endtime="20230424 18:57:36.847"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:36.848" level="INFO">Clicking element '//a[contains(text(),'Música')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:36.847" endtime="20230424 18:57:39.121"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:41.122" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:39.122" endtime="20230424 18:57:41.122"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:35.814" endtime="20230424 18:57:41.123"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMusica}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:41.124" endtime="20230424 18:57:41.140"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:41.145" level="INFO">Page title is 'Amazon Music Unlimited'.</msg>
+<status status="PASS" starttime="20230424 18:57:41.141" endtime="20230424 18:57:41.145"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:41.123" endtime="20230424 18:57:41.146"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMusica}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:41.146" endtime="20230424 18:57:41.160"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:41.146" endtime="20230424 18:57:41.160"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:33.899" endtime="20230424 18:57:41.160"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:33.899" endtime="20230424 18:57:41.160"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 2">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:41.161" endtime="20230424 18:57:41.161"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:41.161" endtime="20230424 18:57:41.161"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:41.161" endtime="20230424 18:57:41.161"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.162"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:41.161" endtime="20230424 18:57:41.162"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:41.160" endtime="20230424 18:57:41.162"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 3">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.162"/>
+</kw>
+<kw name="Entrar no ${menuMaisVendidos}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.162"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.163"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:41.163" endtime="20230424 18:57:41.163"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.163"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:41.162" endtime="20230424 18:57:41.163"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 4">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:41.163" endtime="20230424 18:57:41.163"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:41.163" endtime="20230424 18:57:41.163"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:41.164" endtime="20230424 18:57:41.164"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:41.164" endtime="20230424 18:57:41.164"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:41.163" endtime="20230424 18:57:41.164"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:41.163" endtime="20230424 18:57:41.164"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:33.899" endtime="20230424 18:57:41.164"/>
+</iter>
+<iter>
+<var name="${menus}">2</var>
+<if>
+<branch type="IF" condition="${menus} == 1">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:41.164" endtime="20230424 18:57:41.165"/>
+</kw>
+<kw name="Entrar no ${menuMusica}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:41.165" endtime="20230424 18:57:41.165"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMusica}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:41.165" endtime="20230424 18:57:41.165"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMusica}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:41.165" endtime="20230424 18:57:41.165"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:41.164" endtime="20230424 18:57:41.165"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:41.164" endtime="20230424 18:57:41.165"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 2">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:41.166" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:41.166" endtime="20230424 18:57:42.347"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:41.166" endtime="20230424 18:57:42.347"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:43.351" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:42.349" endtime="20230424 18:57:43.351"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:43.352" endtime="20230424 18:57:43.377"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:43.378" level="INFO">Clicking element '//a[contains(text(),'Ofertas do Dia')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:43.378" endtime="20230424 18:57:44.490"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:46.492" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:44.490" endtime="20230424 18:57:46.492"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:42.348" endtime="20230424 18:57:46.493"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:46.493" endtime="20230424 18:57:46.515"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:46.519" level="INFO">Page title is 'Ofertas e Promoções | Amazon.com.br'.</msg>
+<status status="PASS" starttime="20230424 18:57:46.516" endtime="20230424 18:57:46.519"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:46.493" endtime="20230424 18:57:46.519"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:46.520" endtime="20230424 18:57:46.540"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:46.520" endtime="20230424 18:57:46.540"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:41.165" endtime="20230424 18:57:46.540"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:41.165" endtime="20230424 18:57:46.540"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 3">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:46.540" endtime="20230424 18:57:46.540"/>
+</kw>
+<kw name="Entrar no ${menuMaisVendidos}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:46.541" endtime="20230424 18:57:46.541"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:46.541" endtime="20230424 18:57:46.541"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:46.541" endtime="20230424 18:57:46.541"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:46.540" endtime="20230424 18:57:46.541"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:46.540" endtime="20230424 18:57:46.541"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 4">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:46.542" endtime="20230424 18:57:46.542"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:46.542" endtime="20230424 18:57:46.542"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:46.542" endtime="20230424 18:57:46.542"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:46.542" endtime="20230424 18:57:46.542"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:46.541" endtime="20230424 18:57:46.542"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:46.541" endtime="20230424 18:57:46.543"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:41.164" endtime="20230424 18:57:46.543"/>
+</iter>
+<iter>
+<var name="${menus}">3</var>
+<if>
+<branch type="IF" condition="${menus} == 1">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:46.543" endtime="20230424 18:57:46.543"/>
+</kw>
+<kw name="Entrar no ${menuMusica}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:46.543" endtime="20230424 18:57:46.543"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMusica}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:46.543" endtime="20230424 18:57:46.544"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMusica}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:46.544" endtime="20230424 18:57:46.544"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:46.543" endtime="20230424 18:57:46.544"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:46.543" endtime="20230424 18:57:46.544"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 2">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:46.544" endtime="20230424 18:57:46.544"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:46.544" endtime="20230424 18:57:46.544"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:46.545" endtime="20230424 18:57:46.545"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:46.545" endtime="20230424 18:57:46.545"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:46.544" endtime="20230424 18:57:46.545"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:46.544" endtime="20230424 18:57:46.545"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 3">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230424 18:57:46.546" level="INFO">Opening url 'https://www.amazon.com.br'</msg>
+<status status="PASS" starttime="20230424 18:57:46.546" endtime="20230424 18:57:48.350"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:46.545" endtime="20230424 18:57:48.350"/>
+</kw>
+<kw name="Entrar no ${menuMaisVendidos}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:49.353" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20230424 18:57:48.351" endtime="20230424 18:57:49.353"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230424 18:57:49.354" endtime="20230424 18:57:49.376"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230424 18:57:49.377" level="INFO">Clicking element '//a[contains(text(),'Mais Vendidos')]'.</msg>
+<status status="PASS" starttime="20230424 18:57:49.376" endtime="20230424 18:57:50.898"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230424 18:57:52.900" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230424 18:57:50.899" endtime="20230424 18:57:52.900"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:48.351" endtime="20230424 18:57:52.900"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:52.901" endtime="20230424 18:57:52.920"/>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${tituloPagina}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20230424 18:57:52.924" level="INFO">Page title is 'Amazon.com.br Mais Vendidos: Os itens mais populares na Amazon'.</msg>
+<status status="PASS" starttime="20230424 18:57:52.920" endtime="20230424 18:57:52.924"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:52.901" endtime="20230424 18:57:52.924"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoMaisVendidos}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${texto}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230424 18:57:52.925" endtime="20230424 18:57:52.942"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:52.925" endtime="20230424 18:57:52.942"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:46.545" endtime="20230424 18:57:52.942"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:46.545" endtime="20230424 18:57:52.942"/>
+</if>
+<if>
+<branch type="IF" condition="${menus} == 4">
+<kw name="Acessar home do site ${url}" library="acessarMenuKW" sourcename="Acessar home do site ${url}">
+<status status="NOT RUN" starttime="20230424 18:57:52.943" endtime="20230424 18:57:52.943"/>
+</kw>
+<kw name="Entrar no ${menuOfertas}" library="acessarMenuKW" sourcename="Entrar no ${menu}">
+<status status="NOT RUN" starttime="20230424 18:57:52.943" endtime="20230424 18:57:52.943"/>
+</kw>
+<kw name="Verificar se o titulo da pagina ${titleOfertas}" library="acessarMenuKW" sourcename="Verificar se o titulo da pagina ${tituloPagina}">
+<status status="NOT RUN" starttime="20230424 18:57:52.943" endtime="20230424 18:57:52.943"/>
+</kw>
+<kw name="Verificar se aparece a frase ${textoOfertas}" library="acessarMenuKW" sourcename="Verificar se aparece a frase ${texto}">
+<status status="NOT RUN" starttime="20230424 18:57:52.943" endtime="20230424 18:57:52.943"/>
+</kw>
+<status status="NOT RUN" starttime="20230424 18:57:52.942" endtime="20230424 18:57:52.943"/>
+</branch>
+<status status="PASS" starttime="20230424 18:57:52.942" endtime="20230424 18:57:52.943"/>
+</if>
+<status status="PASS" starttime="20230424 18:57:46.543" endtime="20230424 18:57:52.943"/>
+</iter>
+<status status="PASS" starttime="20230424 18:57:33.898" endtime="20230424 18:57:52.944"/>
+</for>
+<status status="PASS" starttime="20230424 18:57:33.898" endtime="20230424 18:57:52.944"/>
+</kw>
+<kw name="fechar browser" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230424 18:57:52.944" endtime="20230424 18:57:53.114"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:52.944" endtime="20230424 18:57:53.114"/>
+</kw>
+<doc>testando o FOR IN RANGE com numeros de 1 ate 5</doc>
+<tag>for</tag>
+<tag>INRANGE</tag>
+<tag>menus</tag>
+<status status="PASS" starttime="20230424 18:57:32.812" endtime="20230424 18:57:53.115"/>
+</test>
+<test id="s1-s3-t5" name="Testando uma lista simples de FOR IN" line="50">
 <kw name="testando FOR IN" library="lacosDeRepeticaoKW">
 <for flavor="IN">
 <var>${frutas}</var>
@@ -11,76 +1119,246 @@
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.300" endtime="20230404 17:18:01.300"/>
+<status status="PASS" starttime="20230424 18:57:53.119" endtime="20230424 18:57:53.120"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.300" endtime="20230404 17:18:01.300"/>
+<status status="PASS" starttime="20230424 18:57:53.119" endtime="20230424 18:57:53.120"/>
 </iter>
 <iter>
 <var name="${frutas}">maca</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.301" endtime="20230404 17:18:01.301"/>
+<status status="PASS" starttime="20230424 18:57:53.120" endtime="20230424 18:57:53.120"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.300" endtime="20230404 17:18:01.301"/>
+<status status="PASS" starttime="20230424 18:57:53.120" endtime="20230424 18:57:53.121"/>
 </iter>
 <iter>
 <var name="${frutas}">banana</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.302" endtime="20230404 17:18:01.302"/>
+<status status="PASS" starttime="20230424 18:57:53.121" endtime="20230424 18:57:53.121"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.301" endtime="20230404 17:18:01.302"/>
+<status status="PASS" starttime="20230424 18:57:53.121" endtime="20230424 18:57:53.122"/>
 </iter>
 <iter>
 <var name="${frutas}">melancia</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.302" endtime="20230404 17:18:01.303"/>
+<status status="PASS" starttime="20230424 18:57:53.122" endtime="20230424 18:57:53.123"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.302" endtime="20230404 17:18:01.303"/>
+<status status="PASS" starttime="20230424 18:57:53.122" endtime="20230424 18:57:53.123"/>
 </iter>
 <iter>
 <var name="${frutas}">uva</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.303" endtime="20230404 17:18:01.303"/>
+<status status="PASS" starttime="20230424 18:57:53.123" endtime="20230424 18:57:53.124"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.303" endtime="20230404 17:18:01.303"/>
+<status status="PASS" starttime="20230424 18:57:53.123" endtime="20230424 18:57:53.124"/>
 </iter>
 <iter>
 <var name="${frutas}">abacaxi</var>
 <kw name="Log To Console" library="BuiltIn">
 <arg>sua fruta é: ${frutas}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230404 17:18:01.304" endtime="20230404 17:18:01.305"/>
+<status status="PASS" starttime="20230424 18:57:53.125" endtime="20230424 18:57:53.125"/>
 </kw>
-<status status="PASS" starttime="20230404 17:18:01.303" endtime="20230404 17:18:01.305"/>
+<status status="PASS" starttime="20230424 18:57:53.124" endtime="20230424 18:57:53.125"/>
 </iter>
-<status status="PASS" starttime="20230404 17:18:01.299" endtime="20230404 17:18:01.305"/>
+<status status="PASS" starttime="20230424 18:57:53.119" endtime="20230424 18:57:53.125"/>
 </for>
-<status status="PASS" starttime="20230404 17:18:01.299" endtime="20230404 17:18:01.305"/>
+<status status="PASS" starttime="20230424 18:57:53.118" endtime="20230424 18:57:53.125"/>
 </kw>
 <doc>testando o FOR IN RANGE com numeros de 1 ate 5</doc>
 <tag>for</tag>
 <tag>IN</tag>
-<status status="PASS" starttime="20230404 17:18:01.297" endtime="20230404 17:18:01.305"/>
+<status status="PASS" starttime="20230424 18:57:53.116" endtime="20230424 18:57:53.126"/>
 </test>
-<status status="PASS" starttime="20230404 17:18:00.984" endtime="20230404 17:18:01.307"/>
+<test id="s1-s3-t6" name="Usando while para loop" line="58">
+<kw name="testando while" library="lacosDeRepeticaoKW">
+<while condition="${num} &lt; 8">
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.128" endtime="20230424 18:57:53.129"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.131" level="INFO">${num} = 2</msg>
+<status status="PASS" starttime="20230424 18:57:53.129" endtime="20230424 18:57:53.131"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.128" endtime="20230424 18:57:53.131"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.131" endtime="20230424 18:57:53.132"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.134" level="INFO">${num} = 3</msg>
+<status status="PASS" starttime="20230424 18:57:53.132" endtime="20230424 18:57:53.134"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.131" endtime="20230424 18:57:53.135"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.135" endtime="20230424 18:57:53.136"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.139" level="INFO">${num} = 4</msg>
+<status status="PASS" starttime="20230424 18:57:53.137" endtime="20230424 18:57:53.139"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.135" endtime="20230424 18:57:53.139"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.139" endtime="20230424 18:57:53.140"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.141" level="INFO">${num} = 5</msg>
+<status status="PASS" starttime="20230424 18:57:53.140" endtime="20230424 18:57:53.142"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.139" endtime="20230424 18:57:53.142"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.142" endtime="20230424 18:57:53.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.145" level="INFO">${num} = 6</msg>
+<status status="PASS" starttime="20230424 18:57:53.143" endtime="20230424 18:57:53.145"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.142" endtime="20230424 18:57:53.145"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.146" endtime="20230424 18:57:53.146"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.148" level="INFO">${num} = 7</msg>
+<status status="PASS" starttime="20230424 18:57:53.146" endtime="20230424 18:57:53.148"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.145" endtime="20230424 18:57:53.148"/>
+</iter>
+<iter>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${num} ainda nao é 8</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230424 18:57:53.149" endtime="20230424 18:57:53.149"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${num}</var>
+<arg>${num+1}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230424 18:57:53.151" level="INFO">${num} = 8</msg>
+<status status="PASS" starttime="20230424 18:57:53.149" endtime="20230424 18:57:53.151"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.148" endtime="20230424 18:57:53.151"/>
+</iter>
+<status status="PASS" starttime="20230424 18:57:53.128" endtime="20230424 18:57:53.151"/>
+</while>
+<status status="PASS" starttime="20230424 18:57:53.128" endtime="20230424 18:57:53.151"/>
+</kw>
+<doc>testando um loop simples feito com while</doc>
+<tag>while</tag>
+<status status="PASS" starttime="20230424 18:57:53.127" endtime="20230424 18:57:53.152"/>
+</test>
+<status status="PASS" starttime="20230424 18:57:26.127" endtime="20230424 18:57:53.153"/>
+</suite>
+<suite id="s1-s4" name="tiposDeVariaveis" source="/Users/AMN/Documents/leandro/robot/tests/tiposDeVariaveis.robot">
+<test id="s1-s4-t1" name="teste 01 - testando as variaveis" line="7">
+<kw name="testando a variavel simples" library="tiposDeVariaveisKW">
+<kw name="Log" library="BuiltIn">
+<arg>${simples}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230424 18:57:53.183" level="INFO">variavel simples com um valor fixo</msg>
+<status status="PASS" starttime="20230424 18:57:53.183" endtime="20230424 18:57:53.183"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.182" endtime="20230424 18:57:53.184"/>
+</kw>
+<kw name="testando a variavel de listas" library="tiposDeVariaveisKW">
+<kw name="Log" library="BuiltIn">
+<arg>essa tem que ser maça: ${listas[0]} e essa tem que ser melancia: ${listas[2]}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230424 18:57:53.186" level="INFO">essa tem que ser maça: maca e essa tem que ser melancia: melancia</msg>
+<status status="PASS" starttime="20230424 18:57:53.184" endtime="20230424 18:57:53.186"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.184" endtime="20230424 18:57:53.186"/>
+</kw>
+<kw name="testando a variavel de nomes" library="tiposDeVariaveisKW">
+<kw name="Log" library="BuiltIn">
+<arg>nome: ${nomes.nome}, idade: ${nomes.idade} e email: ${nomes.email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230424 18:57:53.189" level="INFO">nome: Leandro Nunes, idade: 19 e email: teste@gmail.com</msg>
+<status status="PASS" starttime="20230424 18:57:53.187" endtime="20230424 18:57:53.189"/>
+</kw>
+<status status="PASS" starttime="20230424 18:57:53.186" endtime="20230424 18:57:53.190"/>
+</kw>
+<doc>exemplificando os tipos de variaveis que existem e mostrando como funcionam.</doc>
+<status status="PASS" starttime="20230424 18:57:53.181" endtime="20230424 18:57:53.190"/>
+</test>
+<status status="PASS" starttime="20230424 18:57:53.157" endtime="20230424 18:57:53.191"/>
+</suite>
+<status status="PASS" starttime="20230424 18:56:44.873" endtime="20230424 18:57:53.193"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="13" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">for</stat>
+<stat pass="2" fail="0" skip="0">busca</stat>
+<stat pass="4" fail="0" skip="0">categorias</stat>
+<stat pass="3" fail="0" skip="0">for</stat>
+<stat pass="2" fail="0" skip="0">IF</stat>
 <stat pass="1" fail="0" skip="0">IN</stat>
+<stat pass="1" fail="0" skip="0">INRANGE</stat>
+<stat pass="1" fail="0" skip="0">menuCliente</stat>
+<stat pass="1" fail="0" skip="0">menuMaisVendidos</stat>
+<stat pass="1" fail="0" skip="0">menuMusica</stat>
+<stat pass="1" fail="0" skip="0">menuOfertas</stat>
+<stat pass="1" fail="0" skip="0">menus</stat>
+<stat pass="1" fail="0" skip="0">num5</stat>
+<stat pass="1" fail="0" skip="0">PS4</stat>
+<stat pass="1" fail="0" skip="0">testandoIF</stat>
+<stat pass="1" fail="0" skip="0">while</stat>
+<stat pass="1" fail="0" skip="0">xbox</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="lacosDeRepeticao">lacosDeRepeticao</stat>
+<stat pass="13" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="acessarMenu">Tests.acessarMenu</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s2" name="buscaProduto">Tests.buscaProduto</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s3" name="lacosDeRepeticao">Tests.lacosDeRepeticao</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="tiposDeVariaveis">Tests.tiposDeVariaveis</stat>
 </suite>
 </statistics>
 <errors>

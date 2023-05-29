@@ -51,3 +51,11 @@ Testando uma lista simples de FOR IN
     [Documentation]    testando o FOR IN RANGE com numeros de 1 ate 5
     [Tags]             for    IN
     testando FOR IN
+
+#############################################################################################################
+# WHILE
+
+Usando while para loop
+    [Documentation]    testando um loop simples feito com while
+    [Tags]             while    
+    testando while
