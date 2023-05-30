@@ -9,14 +9,14 @@ Test Teardown         fechar browser
 
 *** test cases ***
     
-# Caso de teste 01 - Acessar menu livros
-#     [Documentation]        este teste verifica o menu "livros" da amazon.com.br    
-#     ...                    e verifica se realmente está na pagina "livros"
-#     [Tags]                 menuLivros    categorias
-#     Acessar home do site ${url}
-#     Entrar no ${menuLivros}
-#     Verificar se o titulo da pagina ${titleLivros}
-#     Verificar se aparece a frase ${textoLivros}
+Caso de teste 01 - Acessar menu livros
+    [Documentation]        este teste verifica o menu "livros" da amazon.com.br    
+    ...                    e verifica se realmente está na pagina "livros"
+    [Tags]                 menuLivros    categorias
+    Acessar home do site ${url}
+    Entrar no ${menuLivros}
+    Verificar se o titulo da pagina ${titleLivros}
+    Verificar se aparece a frase ${textoLivros}
 
 Caso de teste 02 - Acessar menu musica
     [Documentation]        este teste verifica o menu "Música" da amazon.com.br    

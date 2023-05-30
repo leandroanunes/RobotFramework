@@ -29,7 +29,7 @@ ${textoLivros}                      Loja de Livros
 # Pagina musica
 ${menuMusica}                       //a[contains(text(),'Música')]
 ${titleMusica}                      Amazon Music Unlimited 
-${textoMusica}                      Por tempo limitado
+${textoMusica}                      Acesso ilimitado a 100 milhões de músicas
 
 
 # Pagina ofertas
